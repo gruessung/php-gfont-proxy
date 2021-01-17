@@ -8,7 +8,8 @@ Easily add index.php?url= in front of all google font calls and this it!
 ```
 git clone https://github.com/gruessung/php-gfont-proxy.git
 cd php-gfont-proxy
-composer update
+open docker-compose.yml and change BASE_URL to your own!
+docker-compose up
 ```
 
 ## Example
