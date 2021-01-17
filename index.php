@@ -4,6 +4,10 @@ require_once('vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+if (!isset($_ENV['BASE_URL'])) {
+    throw new Exception('ENV "BASE_URL" missing.');
+}
+
 
 if (!isset($_GET['url'])) {
     die('nope...');
