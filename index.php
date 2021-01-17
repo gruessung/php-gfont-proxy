@@ -1,8 +1,10 @@
 <?php
 header('Content-type: text/css');
 require_once('vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+#$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+#$dotenv->load();
+
+var_dump('BASE_URL');
 
 if (!isset($_ENV['BASE_URL'])) {
     throw new Exception('ENV "BASE_URL" missing.');

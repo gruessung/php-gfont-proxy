@@ -1,0 +1,8 @@
+version: "2"
+services:
+  web:
+    build: .
+    environment:
+      BASE_URL: http://localhost/
+    ports:
+      - 80:80
