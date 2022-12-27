@@ -37,6 +37,7 @@ function getFile($url)
 function cacheFile($url, $filepath) {
     $url = base64_decode($url);
     $url = str_replace('http://', 'https://', $url);
+    $url = str_replace(' ', '+', $url);
     if (strpos($url, 'fonts.googleapis.com') !== false || strpos($url, 'fonts.gstatic.com') !== false) {
         $ch = curl_init();
 
