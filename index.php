@@ -38,7 +38,7 @@ function cacheFile($url, $filepath) {
     $url = base64_decode($url);
     $url = str_replace('http://', 'https://', $url);
     $url = str_replace(' ', '+', $url);
-    if (strpos($url, 'fonts.googleapis.com') !== false || strpos($url, 'fonts.gstatic.com') !== false) {
+    if (strpos($url, 'fonts.googleapis.com') === 8 || strpos($url, 'fonts.gstatic.com') === 8) {
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -53,6 +53,6 @@ function cacheFile($url, $filepath) {
         
         file_put_contents($filepath, $content);
     } else {
-        die('invalid: '.$url);
+        die('Invalid URL');
     }
 }
